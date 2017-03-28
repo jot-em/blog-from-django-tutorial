@@ -1,17 +1,23 @@
 {% load staticfiles %}
 <html>
     <head>
-        <title>This is an example of blog</title>
+        <title>Społecznościowy Portal Informacyjny Samych Ekstra Komunikatów</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
     <body>
-        <div class="page-header">
-	    <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-            <h1><a href="/">Sample blog</a></h1>
-        </div>
+      <div class="page-header">
+        <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+        <h1><a href="/">SPISEK</a></h1>
+      </div>
+      <ul>
+        <li><a href="default.asp">Wszystkie wpisy</a></li>
+        <li><a href="news.asp">Zarejestruj się / Zaloguj</a></li>
+        <li><a href="contact.asp">Contact</a></li>
+        <li><a class = active href="{% url 'post_new' %}">O aplikacji</a></li>
+      </ul> 
         <div class="content container">
             <div class="row">
                <div class="col-md-8">
