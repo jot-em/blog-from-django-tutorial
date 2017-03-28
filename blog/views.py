@@ -37,3 +37,13 @@ def post_edit(request, pk):
     else:
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
+
+def about(request):
+    return render(request, 'blog/about.html')
+
+def login(request):
+    return render(request, 'blog/login.html')
+
+def category(request):
+    post = get_object_or_404(Post, pk=1)
+    return render(request, 'blog/post_detail.html', {'post':post})
