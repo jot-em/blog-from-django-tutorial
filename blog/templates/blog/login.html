@@ -2,6 +2,31 @@
         
 {% block content %}     
 	Tu będzie logowanie / rejestracja
-<p> jesteś zalogowany jako {{user}}</p>
+<!-- <p> jesteś zalogowany jako {{user}}</p>
+
+<h1>Login to Rango</h1>
+
+        <form id="login_form" method="post" action="/rango/login/">
+            {% csrf_token %}
+            Username: <input type="text" name="username" value="" size="50" />
+            <br />
+            Password: <input type="password" name="password" value="" size="50" />
+            <br />
+
+            <input type="submit" value="submit" />
+        </form> -->
+
+<form action="{% url 'login' %}" method="post" accept-charset="utf-8">
+    {% csrf_token %}
+    {% for field in form %}
+        <label>{{ field.label }}</label>
+        {% if field.errors %}
+            {{ field.errors }}
+        {% endif %}
+        {{ field }}
+    {% endfor %}
+    <input type="hidden" name="next" value="{{ next }}" />
+    <input class="button small" type="submit" value="Submit"/>
+</form>
 
 {% endblock content %}
