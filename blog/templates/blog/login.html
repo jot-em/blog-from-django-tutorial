@@ -16,7 +16,7 @@
             <input type="submit" value="submit" />
         </form> -->
 
-<form action="{% url 'login' %}" method="post" accept-charset="utf-8">
+<!-- <form action="{% url 'login' %}" method="post" accept-charset="utf-8">
     {% csrf_token %}
     {% for field in form %}
         <label>{{ field.label }}</label>
@@ -27,6 +27,39 @@
     {% endfor %}
     <input type="hidden" name="next" value="{{ next }}" />
     <input class="button small" type="submit" value="Submit"/>
-</form>
+</form> -->
+
+ <div id="login">
+        <form class="content" name="LoginForm" action="/login/" method="post">
+        {% csrf_token %}
+        {% if next %}
+            <input type="hidden" name="next" value="{{ next }}" />
+        {% endif %}
+        <div class="form-item">
+            <label class="control-label" for="username">Nazwa użytkownika</label>
+            <div class="controls">
+                <input type="text" id="username" name="username"  placeholder="Username">
+            </div>
+        </div>
+        <div class="form-item">
+            <label class="control-label" for="password">Hasło</label>
+            <div class="controls">
+                <input type="password" name="password" id="password" placeholder="Password">
+            </div>
+        </div>
+        <div class="form-item">
+            <div class="controls">
+                <button type="submit" class="btn">Zaloguj się</button>
+            </div>
+        </div>
+
+        {% if form.errors %}
+			<p class="komunikat-pod-polem">Nieprawidłowe dane logowania.</p>
+		{% endif %}
+
+
+        <div class="form-item">Nie masz jeszcze konta? <a class="link-in-text" href="{% url 'post_list' %}">Zarejestruj się</a></div>
+        </form>
+    </div>
 
 {% endblock content %}

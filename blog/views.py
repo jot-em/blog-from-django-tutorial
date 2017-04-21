@@ -53,3 +53,6 @@ def login(request):
 def category(request):
     post = get_object_or_404(Post, pk=1)
     return render(request, 'blog/post_detail.html', {'post':post})
+
+def panel(request):
+    return render(request, 'blog/panel.html') 

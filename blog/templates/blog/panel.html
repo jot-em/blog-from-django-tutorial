@@ -1,0 +1,37 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <title>Społecznościowy Portal Informacyjny Samych Ekstra Komunikatów</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    </head>
+    <body>
+      <div class="page-header">
+        <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+        <h1><a href="/">SPISEK</a></h1>
+      </div>
+      <ul class="menu">
+        <li><a href="{% url 'post_list' %}">Wszystkie wpisy</a></li>
+        <!-- <li class="dropdown">
+          <a class="dropbtn" href="{% url 'category' %}">Kategorie</a>
+          <div class="dropdown-content">
+            <a href="{% url 'about' %}">Link 1</a>
+            <a href="{% url 'login'%}">Link 2</a>
+          </div>
+        </li> -->
+        <li><a href="{% url 'panel/post_new' %}">Dodaj wpis</a></li>
+        <li><a href="{% url 'about' %}">O aplikacji</a></li>
+        <li><a class="active" href="{% url 'login'%}">Wyloguj się</a></li>
+      </ul>
+      <div class="content container">
+          <div class="row">
+             <div class="col-md-8">
+               {% block content %}
+               {% endblock %}
+             </div>
+          </div>
+      </div>
+    </body>
+</html>
