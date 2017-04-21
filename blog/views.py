@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from .models import Post
 from .forms import PostForm
+from django.contrib.auth import authenticate
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
@@ -42,7 +43,12 @@ def about(request):
     return render(request, 'blog/about.html')
 
 def login(request):
-    return render(request, 'blog/login.html')
+    user = authenticate(username='jot-em', password='haslo')
+    if user is not None:
+        username = 'juhu'
+        return render(request, 'blog/about.html',{'user':username})
+    else:
+        return render(request, 'blog/about.html', {'user':'blaha'})
 
 def category(request):
     post = get_object_or_404(Post, pk=1)
