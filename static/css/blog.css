@@ -1,6 +1,7 @@
 .page-header {
     background-color: #ff9400;
     margin-top: 0;
+    margin-bottom: 0;
     padding: 20px 20px 20px 40px;
 }
 
@@ -38,11 +39,6 @@ h1, h2, h3, h4 {
     margin-right: 20px;
 }
 
-.menu {
-    color: red;
-    margin-top: 100;
-}
-
 .post {
     margin-bottom: 70px;
 }
@@ -51,11 +47,11 @@ h1, h2, h3, h4 {
     color: #000000;
 }
 
-ul {
+.menu {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+    margin-top: 0;
+    padding: 0px 20px 49px 40px;
+    /*overflow: hidden; to hidden powodowalo ze mooj dropdown byl niewidoczny!*/
     background-color: #333;
 }
 
