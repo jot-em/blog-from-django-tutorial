@@ -57,16 +57,20 @@ h1, h2, h3, h4 {
     background-color: #333;
 }
 
-li {
+li, .almost-menu{
     float: left;
 }
 
-a, .menu .dropbtn {
+a, .menu .dropbtn, .almost-menu {
     display: inline-block;
     color: white;
     text-align: center;
     padding: 14px 30px 14px 30px;
     text-decoration: none;
+}
+
+.almost-menu {
+    padding-left: 80px; 
 }
 
 /* Change the link color to #111 (black) on hover */
