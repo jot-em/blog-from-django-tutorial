@@ -5,6 +5,7 @@ from .forms import PostForm
 from django.contrib.auth import authenticate, logout
 from blog.forms import *
 
+from django.views.decorators.csrf import csrf_exempt
 #from login.forms import *
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_protect
@@ -66,7 +67,7 @@ def panel(request):
     return render(request, 'blog/panel.html') 
 
  
-@csrf_protect
+@csrf_exempt
 def register(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
@@ -87,7 +88,8 @@ def register(request):
     'registration/register.html',
     variables,
     )
- 
+
+@csrf_exempt
 def register_success(request):
     return render_to_response(
     'registration/success.html',
