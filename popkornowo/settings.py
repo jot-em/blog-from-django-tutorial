@@ -25,7 +25,7 @@ SECRET_KEY = 'o%x(enjd4r&5v8ukb^n=%jq0td=j8##2-m&mx@)^a(r4qee5xp'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["popkornistka.pythonanywhere.com"]
 
 
 # Application definition
