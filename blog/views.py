@@ -95,10 +95,6 @@ def register_success(request):
     'registration/success.html',
     )
  
-def logout_page(request):
-    logout(request)
-    return HttpResponseRedirect('/')
- 
  # to moze pozniej zaaplikuje do stron gdzie faktycznie wymagam logowania
 # @login_required
 # def home(request):
