@@ -14,7 +14,9 @@ urlpatterns = [
     url(r'^post/category/$', views.category, name='category'),
     url(r'^accounts/profile/$', RedirectView.as_view(url='/panel/nowy_post')),
     url(r'^panel/$', views.panel, name='panel'),
-   
+    url(r'^register[/]?$', views.register, name='register'),
+    url(r'^register/success/$', views.register_success, name='register_success'),
+
     # po zalogowaniu
     url(r'^panel/nowy_post$', views.post_new, name='post_new'),
 

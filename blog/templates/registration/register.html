@@ -1,0 +1,15 @@
+{% extends "blog/base.html" %}
+{% block title %}Rejestracja nowego użytkownika{% endblock %}
+{% block head %}Rejestracja nowego użytkownika{% endblock %}
+{% block content %}
+    <form method="post" action="/register">{% csrf_token %}
+        <table border="0">
+            {{ form.as_table }}
+        </table>
+        <input type="submit" value="Register" />
+    </form>
+
+ <!--    {% if form.errors %}
+		<p class="komunikat-pod-polem">BUU dane logowania.</p>
+	{% endif %} -->
+{% endblock %}
