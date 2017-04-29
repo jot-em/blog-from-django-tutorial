@@ -5,9 +5,12 @@ from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
 
 class PostForm(forms.ModelForm):
-    class Meta:
-        model = Post
-        fields = ('title', 'text')
+	title = forms.CharField(max_length=10, label="Tytuł", required=False)
+	text = forms.CharField(max_length=10, label="Tekst", required=False)
+
+	class Meta:
+		model=Post
+		fields=('title', 'text')
 
  
 class RegistrationForm(forms.Form):
