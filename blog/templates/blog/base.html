@@ -22,8 +22,16 @@
             <a href="{% url 'login'%}">Sport</a>
           </div>
         </li>
+        {% if user.is_authenticated %}
+          <li><a href="{% url 'post_new' %}">Dodaj wpis</a></li>
+        {% endif %}   
         <li><a href="{% url 'about' %}">O aplikacji</a></li>
-        <li><a class="active" href="{% url 'login'%}">Zaloguj się</a></li>
+        {% if user.is_authenticated %}
+          <li><a class="active" href="{% url 'logout_user'%}">Wyloguj się</a></li>
+          <li class="almost-menu">Jesteś zalogowany jako {{user}}</li>
+        {% else %}
+          <li><a class="active" href="{% url 'login'%}">Zaloguj się</a></li>
+        {% endif %}  
       </ul>
       <div class="content container">
           <div class="row">
