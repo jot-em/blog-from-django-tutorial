@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+# import django.contrib.auth
+# django.contrib.auth.LOGIN_URL = '/'
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -25,7 +27,7 @@ SECRET_KEY = 'o%x(enjd4r&5v8ukb^n=%jq0td=j8##2-m&mx@)^a(r4qee5xp'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["popkornistka.pythonanywhere.com", "drugaiteracja.pythonanywhere.com"]
 
 
 # Application definition
@@ -106,3 +108,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'public', 'static')
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
+
+# APPEND_SLASH=False
