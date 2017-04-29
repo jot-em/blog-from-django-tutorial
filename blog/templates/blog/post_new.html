@@ -1,7 +1,7 @@
 {% extends 'blog/panel.html' %}
 
 {% block content %}
-    <h1>Edytuj wpis</h1>
+    <h1>Nowy wpis</h1>
     <form method="POST" class="post-form">{% csrf_token %}
         {{ form.as_p }}
         <button type="submit" class="save btn btn-default">Publikuj</button>
