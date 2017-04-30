@@ -64,9 +64,9 @@ def login(request):
     else:
         return render(request, 'blog/about.html', {'user':'blaha'})
 
-def category(request):
-    post = get_object_or_404(Post, pk=1)
-    return render(request, 'blog/post_detail.html', {'post':post})
+def category(request, ctg):
+    posts = Post.objects.filter(categories=ctg).order_by('-published_date')
+    return render(request, 'blog/post_list.html', {'posts':posts})
 
 def panel(request):
     return render(request, 'blog/panel.html') 

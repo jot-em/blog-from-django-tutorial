@@ -14,12 +14,12 @@
       <ul class="menu">
         <li><a href="{% url 'post_list' %}">Wszystkie wpisy</a></li>
         <li class="dropdown">
-          <a class="dropbtn" href="{% url 'category' %}">Kategorie</a>
+          <a class="dropbtn" href="{% url 'category' ctg='sport' %}">Kategorie</a>
           <div class="dropdown-content">
-            <a href="{% url 'about' %}">Nauka</a>
-            <a href="{% url 'about' %}">Inne</a>
-            <a href="{% url 'about' %}">Muzyka</a>
-            <a href="{% url 'login'%}">Sport</a>
+            <a href="{% url 'category' ctg='science' %}">Nauka</a>
+            <a href="{% url 'category' ctg='others' %}">Inne</a>
+            <a href="{% url 'category' ctg='music' %}">Muzyka</a>
+            <a href="{% url 'category' ctg='sport' %}">Sport</a>
           </div>
         </li>
         {% if user.is_authenticated %}
