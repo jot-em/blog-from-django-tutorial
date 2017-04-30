@@ -10,6 +10,9 @@ class Post(models.Model):
             default=timezone.now)
     published_date = models.DateTimeField(
             blank=True, null=True)
+    CATEGORIES_CHOICES = (('music', 'Muzyka'),('science', 'Nauka'), ('sport', 'Sport'), ('others', 'Inne'))
+    categories = models.CharField(max_length=200, default='Inne')
+    author_invisible = models.BooleanField(default=False)
 
     def publish(self):
         self.published_date = timezone.now()
