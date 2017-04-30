@@ -4,7 +4,11 @@
 	{% for post in posts %}
                 <div class="post">
                   <div class="date">
-                     <p>Opublikowany przez: {{post.author}}, {{ post.published_date }}</p>
+					{% if post.author_invisible == False %}
+						<p>Opublikowany {{ post.published_date }}</p>
+					{% else %}
+						<p>Opublikowany przez: {{post.author}}, {{ post.published_date }}</p>
+					{% endif %}		
                   </div>
                   <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
                   <p>{{ post.text|truncatechars:500 }}</p>
