@@ -19,7 +19,10 @@ def post_list(request):
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=str(int(pk)+1))
-    return render(request, 'blog/post_detail.html', {'post':post})
+    if post.author == request.user:
+        return render(request, 'blog/post_detail.html', {'post':post})
+    else:
+        return render(request, 'blog/post_detail_without_modification.html', {'post':post})
 
 @login_required(login_url='/login/')
 def post_new(request):
