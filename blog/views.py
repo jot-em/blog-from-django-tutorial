@@ -53,6 +53,13 @@ def post_edit(request, pk):
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
 
+@login_required(login_url='/login/')
+def post_delete(request, pk):
+    deleting_post = Post.objects.filter(pk=pk).delete()
+    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
+    deleted = True
+    return render(request, 'blog/post_list.html', {'posts': posts, 'deleted':deleted})
+
 def about(request):
     return render(request, 'blog/about.html')
 
