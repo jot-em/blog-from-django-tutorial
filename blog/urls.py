@@ -10,7 +10,7 @@ urlpatterns = [
     url(r'^about/$', views.about, name='about'),
     url(r'^login/$', login, kwargs={'template_name': 'blog/login.html'}, name='login'),
     url(r'^logout/$', logout,{'next_page': '/about'}, name='logout_user'),
-    url(r'^post/category/$', views.category, name='category'),
+    url(r'^category/(?P<ctg>[a-z]+)/$', views.category, name='category'),
     url(r'^accounts/profile/$', RedirectView.as_view(url='/panel/nowy_post')),
     url(r'^panel/$', views.panel, name='panel'),
     url(r'^register[/]?$', views.register, name='register'),

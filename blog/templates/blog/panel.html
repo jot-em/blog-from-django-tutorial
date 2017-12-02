@@ -14,13 +14,15 @@
       </div>
       <ul class="menu">
         <li><a href="{% url 'post_list' %}">Przeglądaj wpisy</a></li>
-        <!-- <li class="dropdown">
-          <a class="dropbtn" href="{% url 'category' %}">Kategorie</a>
+        <li class="dropdown">
+          <a class="dropbtn" href="{% url 'about' %}">Kategorie</a>
           <div class="dropdown-content">
-            <a href="{% url 'about' %}">Link 1</a>
-            <a href="{% url 'login'%}">Link 2</a>
+            <a href="{% url 'about' %}">Nauka</a>
+            <a href="{% url 'about' %}">Inne</a>
+            <a href="{% url 'about' %}">Muzyka</a>
+            <a href="{% url 'about'%}">Sport</a>
           </div>
-        </li> -->
+        </li>
         <li><a href="{% url 'post_new' %}">Dodaj wpis</a></li>
         <li><a href="{% url 'about' %}">O aplikacji</a></li>
         <li><a class="active" href="{% url 'logout_user'%}">Wyloguj się</a></li>

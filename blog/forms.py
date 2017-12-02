@@ -5,9 +5,15 @@ from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
 
 class PostForm(forms.ModelForm):
-    class Meta:
-        model = Post
-        fields = ('title', 'text')
+
+   CATEGORIES_CHOICES = (('music', 'Muzyka'),('science', 'Nauka'), ('sport', 'Sport'), ('others', 'Inne'))
+   categories = forms.ChoiceField(label='Kategoria', choices=CATEGORIES_CHOICES)
+   author_invisible = forms.BooleanField(label='Nie wyświetlaj, kto jest autorem', required=False)
+   
+   class Meta:
+       model=Post
+       fields=('title', 'text')
+       fields=('title', 'categories', 'text', 'author_invisible')
 
  
 class RegistrationForm(forms.Form):
