@@ -17,10 +17,10 @@
         <li class="dropdown">
           <a class="dropbtn" href="{% url 'category' ctg='sport' %}">Kategorie</a>
           <div class="dropdown-content">
-            <a href="{% url 'category' ctg='science' %}">Technologia</a>
+            <a href="{% url 'category' ctg='science' %}">Nauka</a>
             <a href="{% url 'category' ctg='others' %}">Inne</a>
-            <a href="{% url 'category' ctg='music' %}">Kosmos</a>
-            <a href="{% url 'category' ctg='sport' %}">Sprzęt</a>
+            <a href="{% url 'category' ctg='music' %}">Muzyka</a>
+            <a href="{% url 'category' ctg='sport' %}">Sport</a>
           </div>
         </li>
         {% if user.is_authenticated %}

@@ -7,7 +7,7 @@ from django.utils.translation import ugettext_lazy as _
 class PostForm(forms.ModelForm):
 	title = forms.CharField(max_length=10, label="Tytuł", required=False)
 	text = forms.CharField(max_length=10, label="Tekst", required=False)
-	CATEGORIES_CHOICES = (('music', 'Kosmos'),('science', 'Technologia'), ('sport', 'Sprzęt'), ('others', 'Inne'))
+	CATEGORIES_CHOICES = (('music', 'Muzyka'),('science', 'Nauka'), ('sport', 'Sport'), ('others', 'Inne'))
 	categories = forms.ChoiceField(label='Kategoria', choices=CATEGORIES_CHOICES)
 	author_invisible = forms.BooleanField(label='Nie wyświetlaj, kto jest autorem', required=False)
 	
