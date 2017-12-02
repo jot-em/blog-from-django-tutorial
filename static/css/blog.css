@@ -128,3 +128,9 @@ li.dropdown {
 .komunikat-pod-polem, .errorlist {
     color: red;
 }
+
+.success_message {
+    color: #4CAF50;
+    font-size: 20px;
+    font-style: italic;
+}

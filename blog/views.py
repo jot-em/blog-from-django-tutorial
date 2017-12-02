@@ -94,6 +94,12 @@ def register_success(request):
     return render_to_response(
     'registration/success.html',
     )
+@login_required(login_url='/login/')
+def post_delete(request, pk):
+    deleting_post = Post.objects.filter(pk=pk).delete()
+    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
+    deleted = True
+    return render(request, 'blog/post_list.html', {'posts': posts, 'deleted':deleted})
  
  # to moze pozniej zaaplikuje do stron gdzie faktycznie wymagam logowania
 # @login_required
